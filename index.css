@@ -66,6 +66,28 @@ main{
     margin-top: 1rem;
 }
 
+.like-btn {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+@keyframes like-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .like-btn[aria-pressed="true"] img {
+        animation: like-pulse 280ms ease-out;
+    }
+}
+
 .post + .post {
     margin-top: 20px;
 }

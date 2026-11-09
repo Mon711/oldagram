@@ -57,12 +57,14 @@ for (let index = 0; index < posts.length; index++) {
 
             <div class="post-content">
                 <div class="post-icons">
-                    <img src="images/icon-heart.png" alt="Like button" />
+                    <button type="button" class="like-btn" id="like-btn-${index}" aria-label="Like post by ${post.name}" aria-pressed="false">
+                        <img src="images/icon-heart.svg" alt="" />
+                    </button>
                     <img src="images/icon-comment.png" alt="Comment button" />
                     <img src="images/icon-dm.png" alt="Share button" />
                 </div>
 
-                <p class="likes">${post.likes} likes</p>
+                <p class="likes" id="likes-count-${index}">${post.likes} likes</p>
 
                 <p class="caption">
                     <strong>${post.username}</strong>
@@ -73,4 +75,20 @@ for (let index = 0; index < posts.length; index++) {
     `;
 }
 
-postsContainer.innerHTML = postsHtml
+postsContainer.innerHTML = postsHtml;
+
+for (let index = 0; index < posts.length; index++) {
+	const post = posts[index];
+	const likeBtn = document.getElementById(`like-btn-${index}`);
+	const likeCount = document.getElementById(`likes-count-${index}`);
+	const likeIcon = likeBtn.querySelector("img");
+	let isLiked = false;
+
+	likeBtn.addEventListener("click", () => {
+		isLiked = !isLiked;
+		post.likes += isLiked ? 1 : -1;
+		likeCount.textContent = `${post.likes} likes`;
+		likeIcon.src = isLiked ? "images/icon-heart-liked.svg" : "images/icon-heart.svg";
+		likeBtn.setAttribute("aria-pressed", String(isLiked));
+	});
+}
