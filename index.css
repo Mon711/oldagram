@@ -11,18 +11,24 @@ header {
     margin: 1rem;
 }
 
+main{
+
+    background-color: #f3f1f1;
+}
+
 .profile-img {
     border-radius: 50%;
 }
 
 .navbar-line {
     opacity: 50%;
+    margin: 0;
 }
 
 .post {
     display: flex;
     flex-direction: column;
-    max-width: 25rem;
+    max-width: 35rem;
     margin: 0 auto;
 }
 
@@ -30,12 +36,19 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px;
+    padding: 10px 0;
+    background-color: #fff;
+    padding: 1rem;
 }
 
 .avatar {
     border-radius: 50%;
     height: 2.2rem;
+}
+
+.post-content{
+    background-color: #fff;
+    padding: 0 12px;
 }
 
 .user-info p {
@@ -50,4 +63,5 @@ header {
 .post-icons img {
     width: 1.5rem;
     height: auto;
+    margin-top: 1rem;
 }
