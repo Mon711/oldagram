@@ -1,0 +1,53 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    height: 4.2rem;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.profile-img {
+    border-radius: 50%;
+}
+
+.navbar-line {
+    opacity: 50%;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 2.2rem;
+}
+
+.user-info p {
+    margin: 0;
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+}
+
+.post-icons img {
+    width: 1.5rem;
+    height: auto;
+}
